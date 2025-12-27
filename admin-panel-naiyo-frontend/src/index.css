@@ -1,0 +1,314 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.box-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.box-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sub-service {
+  font-size: 14px;
+  font-weight: 500;
+  color: #16a34a; /* Naiyo green accent */
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.card-actions button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: #fff;
+}
+
+.card-actions button:hover {
+  background: #f5f5f5;
+}
+
+.card-actions .danger {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+
+/* ================= PAGE ================= */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+/* ================= ADD BUTTON ================= */
+.add-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= GRID ================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.service-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.service-card strong {
+  margin-top: auto;
+  font-size: 16px;
+  color: #2563eb;
+}
+
+/* ================= CARD ACTIONS ================= */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.card-actions button:hover {
+  background: #d1d5db;
+}
+
+.card-actions .danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.card-actions .danger:hover {
+  background: #fecaca;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* ================= MODAL CARD ================= */
+.modal-card {
+  background: white;
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* ================= INPUTS ================= */
+.modal-card input,
+.modal-card textarea,
+.modal-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-card textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modal-card input:focus,
+.modal-card textarea:focus,
+.modal-card select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= MODAL ACTIONS ================= */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.modal-actions button:last-child {
+  background: #e5e7eb;
+}
+body {
+  background: radial-gradient(1200px at 10% 10%, #eef2ff, transparent),
+              radial-gradient(1000px at 90% 20%, #ecfeff, transparent),
+              linear-gradient(to bottom, #f8fafc, #eef2ff);
+}
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "🛠️";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 28px;
+  opacity: 0.12;
+}
+.service-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.service-toolbar input,
+.service-toolbar select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 14px;
+}
+body.dark {
+  background: linear-gradient(to bottom, #020617, #020617);
+  color: #e5e7eb;
+}
+
+body.dark .service-card {
+  background: #020617;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background: #020617;
+  color: white;
+  border-color: #374151;
+}
+
+body.dark .modal-card {
+  background: #020617;
+}
+
+.page-title {
+  margin-bottom: 14px;
+}
+
+.page-title + input {
+  display: block;
+}
+
+.add-btn {
+  margin-top: 6px;
+}
+
+

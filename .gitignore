@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+admin-panel-naiyo-frontend/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+naiyo_backend/myenv/
+naiyo_backend/__pycache__/
+naiyo_backend/routes/__pycache__/
+naiyo_backend/models/__pycache__/
+*.env
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Package manager locks (optional - uncomment if you want to exclude)
+# package-lock.json
+
+# Uploads (if contains user data)
+# naiyo_backend/uploads/
