@@ -8,8 +8,10 @@ import os
 
 auth_bp = Blueprint('auth', __name__)
 
-# Secret key for JWT - In production, use environment variable
-SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'naiyo24-admin-secret-key-2026')
+# Secret key for JWT - must be provided via environment variable
+SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+if not SECRET_KEY:
+    raise RuntimeError("JWT_SECRET_KEY environment variable is not set")
 
 def token_required(f):
     """Decorator to protect routes that require authentication"""
