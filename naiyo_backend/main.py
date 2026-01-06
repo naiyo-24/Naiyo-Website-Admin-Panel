@@ -16,6 +16,7 @@ from models.service_master import ServiceMaster
 from models.pricing_master import PricingMaster
 from models.testimonials import Testimonial
 from models.our_projects import OurProjects
+from models.admin_user import AdminUser
 from routes.testimonials_routes import testimonials_bp
 
 
@@ -62,6 +63,7 @@ from routes.pricing_master_routes import pricing_master_bp
 from routes.testimonials_routes import testimonials_bp
 from routes.our_projects_routes import our_projects_bp
 from routes.expose_uploads_routes import static_files_bp
+from routes.auth_routes import auth_bp
 app.register_blueprint(about_naiyo_bp)
 app.register_blueprint(customer_query_bp)
 app.register_blueprint(partner_companies_bp)
@@ -70,6 +72,7 @@ app.register_blueprint(pricing_master_bp)
 app.register_blueprint(testimonials_bp)
 app.register_blueprint(our_projects_bp)
 app.register_blueprint(static_files_bp)
+app.register_blueprint(auth_bp)
 
 # Root route to verify backend is running
 @app.route('/')

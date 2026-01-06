@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Lock, Mail, LogIn, AlertCircle } from "lucide-react";
+import apiBaseUrl from "../apiBaseUrl";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,23 +30,33 @@ export default function Login() {
     setIsLoading(true);
 
     try {
-      // Simulate API call - Replace with actual authentication logic
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch(`${apiBaseUrl}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.toLowerCase().trim(),
+          password,
+          remember_me: rememberMe,
+        }),
+      });
 
-      // For demo purposes - replace with actual auth
-      if (email === "admin@naiyo24.com" && password === "admin123") {
-        // Store auth state if needed
-        if (rememberMe) {
-          localStorage.setItem("isAuthenticated", "true");
-        } else {
-          sessionStorage.setItem("isAuthenticated", "true");
-        }
+      const data = await response.json();
+
+      if (response.ok) {
+        // Store token and user info
+        const storage = rememberMe ? localStorage : sessionStorage;
+        storage.setItem("authToken", data.token);
+        storage.setItem("user", JSON.stringify(data.user));
+        storage.setItem("isAuthenticated", "true");
+        
         navigate("/dashboard");
       } else {
-        setError("Invalid email or password");
+        setError(data.error || "Invalid email or password");
       }
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      setError("Unable to connect to server. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -438,13 +449,10 @@ export default function Login() {
                 fontWeight: "600",
               }}
             >
-              Demo Credentials:
+              Admin Access
             </p>
-            <p style={{ fontSize: "13px", color: "rgba(255, 255, 255, 0.8)", margin: "0 0 4px 0" }}>
-              Email: <code style={{ background: "rgba(255, 255, 255, 0.1)", padding: "2px 6px", borderRadius: "4px", color: "#a5b4fc" }}>admin@naiyo24.com</code>
-            </p>
-            <p style={{ fontSize: "13px", color: "rgba(255, 255, 255, 0.8)", margin: 0 }}>
-              Password: <code style={{ background: "rgba(255, 255, 255, 0.1)", padding: "2px 6px", borderRadius: "4px", color: "#a5b4fc" }}>admin123</code>
+            <p style={{ fontSize: "13px", color: "rgba(255, 255, 255, 0.6)", margin: 0, lineHeight: "1.5" }}>
+              Use your registered admin credentials to sign in. Contact the system administrator if you need access.
             </p>
           </div>
         </div>
