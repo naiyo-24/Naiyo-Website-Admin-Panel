@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: mms_lab_frontend
+    ports:
+      - "5190:5190"
+    restart: unless-stopped
+    networks:
+      - naiyo_admin_net
+
+networks:
+  naiyo_admin_net:
+    driver: bridge
